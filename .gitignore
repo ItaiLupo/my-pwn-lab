@@ -1,0 +1,22 @@
+# Block global root Obsidian runtime workspace changes
+.obsidian/workspace.json
+.obsidian/graph.json
+.obsidian/workspace-mobile.json
+.obsidian/backlink.json
+.obsidian/core-plugins.json
+.obsidian/page-preview.json
+
+# Keep your community plugins, hotkeys, and dark-mode themes tracked
+!.obsidian/plugins/
+!.obsidian/themes/
+!.obsidian/app.json
+!.obsidian/appearance.json
+!.obsidian/hotkeys.json
+
+.direnv/
+
+# Compiled binaries and exploit artifacts you don't want in git history
+*.o
+*.out
+challenges/**/bin/*
+!challenges/challenge_template/bin/

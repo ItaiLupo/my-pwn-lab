@@ -1,0 +1,5 @@
+[flake8]
+max-line-length = 100
+# E266 ignores blocks of #### used for visual code separation in exploit templates
+ignore = E266, W503
+exclude = .git, .obsidian, research_vault

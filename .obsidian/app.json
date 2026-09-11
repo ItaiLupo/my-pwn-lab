@@ -1,0 +1,8 @@
+{
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./Attachments",
+  "showUnsupportedFiles": true,
+  "readableLineLength": false,
+  "showLineNumber": true,
+  "vimMode": true
+}
