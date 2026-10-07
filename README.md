@@ -1,6 +1,8 @@
 ## pwn_lab
+This repository contains my personal solutions and exploit code for educational CTF platforms like pwnable.kr.
+All work was performed in isolated local lab environments to understand software vulnerabilities and master secure coding practices.
 
-A minimalist, high-performance workspace for binary exploitation, low-level vulnerability research, and architecture security audits. 
+A minimalist for binary exploitation, low-level vulnerability research, and architecture security audits for educational CTFs. 
 
 ---
 
@@ -25,3 +27,5 @@ The workspace isolates global automation and tooling configurations from active 
 ### 🏆 Completed challenges
 
 A chronological ledger showcasing verified root-cause analysis advisories and weaponized exploit implementations.
+challenges/pwnable_kr
+ - [[brainfuck]]
