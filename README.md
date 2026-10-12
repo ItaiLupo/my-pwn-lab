@@ -1,5 +1,6 @@
 ## pwn_lab
-This repository contains my personal solutions and exploit code for educational CTF platforms like pwnable.kr.
+
+This repository contains my personal solutions and exploit code for educational CTF platforms like pwnable.kr.  
 All work was performed in isolated local lab environments to understand software vulnerabilities and master secure coding practices.
 
 A minimalist for binary exploitation, low-level vulnerability research, and architecture security audits for educational CTFs. 
@@ -26,6 +27,8 @@ The workspace isolates global automation and tooling configurations from active 
 
 ### 🏆 Completed challenges
 
-A chronological ledger showcasing verified root-cause analysis advisories and weaponized exploit implementations.
+A chronological ledger showcasing verified root-cause analysis advisories and weaponized exploit implementations.  
 challenges/pwnable_kr
- - [[brainfuck]]
+ * [[brainfuck]]
+ * [[challenges/pwnable_kr/Rookiss/echo2/bin/echo2|echo2]]
+ * [[challenges/pwnable_kr/Rookiss/md5_calculator/bin/md5calculator|md5calculator]]

@@ -7,7 +7,7 @@ we need to get a shell or the flag some how.
 
 ## Elf overview
 
-first thing of note in main we use fgets to get a 1024 input buffer from stdin but it is a safe fgets.
+first thing of note in main we use fgets to get a 1024 input buffer from stdin but it is a safe fgets.  
 then it loops over the buffer and call a function named do_brainfuck for each char.
 
 in do_brainfuck  
@@ -15,7 +15,7 @@ most of it looks fine but the operation < and > work on the pointer p unbonded, 
 0804a080 l O .bss	00000004 p  
 0804a0a0 l O .bss	00000400 tape
 
-it it s byte pointer,
+it it s byte pointer,  
 and it doesn't seem to have any thing limiting writing before or after it
 
 in main we can see  
@@ -31,34 +31,33 @@ after we change it we can still add or remove to it but within the 1024 input bu
 
 let's check over address of interest.  
 
-0x080484f7 is main function start addr.
+0x080484f7 is main function start addr.  
 0x080485dc is so do_brainfuck start addr.
 
-fget got entry is 0x0804A010
-puts got entry is  0x0804A018
-putchar got entry is  0x0804A030
-getchar got entry is 0x0804A00C
+fget got entry is 0x0804A010  
+puts got entry is 0x0804A018  
+putchar got entry is 0x0804A030  
+getchar got entry is 0x0804A00C  
 memset got entry is 0x0804A02C
 
-all libc functions which are used by main/do_brainfuck,
+all libc functions which are used by main/do_brainfuck,  
 and we can mostly control when they are called.
 
-
-
-.text is mapped as non writeable.
+.text is mapped as non writeable.  
 the got is writeable and we can get to it.
 
 so again by changing the second byte to 84 we are at the got,
 
 but how do we set what we pass to it?  
-we need to print out the address of the live libc functions,
-and get the libc version and offsets so we can later overide the address with the correct adress.
+we need to print out the address of the live libc functions,  
+and get the libc version and offsets so we can later override the address with the correct address.
 
 also we need to find system so we should find the offset from there we can get the address of system and use getchar to override it to?  
 
 we can use pwntools for the address finding we just need to get the addr of puts and of \_\_libc_start_main_addr or something
 
-## win condtion
-print a few of the got entry of the libc functions and use them to get the libc version and the libc offset of the function we need.
-on the attack, find the aslr and use it to get the live addr of the functions we need.
+## Win condition
+
+print a few of the got entry of the libc functions and use them to get the libc version and the libc offset of the function we need.  
+on the attack, find the aslr and use it to get the live addr of the functions we need.  
 find a way to get system to be called with /bin/sh or cat flag.
